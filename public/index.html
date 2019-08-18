@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>poi-svelte</title>
+    </head>
+    <body>
+        <% if (!envs.POI_APP_CUSTOM_ELEMENT) { %>
+        <!--
+            This section is only generated for Svelte web apps.
+        -->
+        <div id="app"></div>
+
+        <% } else { %>
+
+        <!--
+            This section is only generated for Web components.
+        -->
+
+        <my-thing
+            abc="1234"
+            hello="world"
+            onclick="clickHandler()"
+        >This slot content is coming from Index.html, as expected.</my-thing>
+
+        <script>
+            window.addEventListener('load', () => {
+                const el = document.querySelector('my-thing')
+                el.addEventListener('custom', customHandler)
+                el.$on('svelte-event', () => console.log('### Svelte EVENT'))
+            })
+
+            function clickHandler() {
+                console.log('### CLICK')
+            }
+            function customHandler() {
+                console.log('### CUSTOM')
+            }
+        </script>
+        <% } %>
+    </body>
+</html>

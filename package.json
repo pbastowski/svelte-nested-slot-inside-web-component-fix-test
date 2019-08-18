@@ -1,0 +1,24 @@
+{
+    "name": "poi-svelte",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "start": "poi --serve src/index.js",
+        "start-wc": "POI_APP_CUSTOM_ELEMENT=1 poi --serve src/App.svelte",
+        "build": "poi --prod src/index.js",
+        "build-wc": "POI_APP_CUSTOM_ELEMENT=1 poi --prod src/App.svelte",
+        "test-static": "cd dist && serve"
+    },
+    "dependencies": {
+        "svelte": "github:cam-stitt/svelte#3128-custom-el-nested-slots"
+    },
+    "devDependencies": {
+        "mini-css-extract-plugin": "^0.8.0",
+        "poi": "latest",
+        "prettier": "^1.18.2",
+        "prettier-plugin-svelte": "^0.7.0",
+        "serve": "^11.1.0",
+        "style-loader": "^1.0.0",
+        "svelte-loader": "^2.13.6"
+    }
+}
