@@ -1,5 +1,8 @@
 <script>
+    import 'bootstrap/dist/css/bootstrap.min.css'
     import Input from './Input.svelte'
+    import { Button, Alert } from 'sveltestrap'
+
     const dispatch = require('svelte').createEventDispatcher()
 
     export let abc
@@ -41,6 +44,8 @@
 
 <svelte:options tag="my-thing" />
 
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+
 <!--
     We can prevent content from rendering until we have finished initialising
     our data by using a flag like initialised. For web component targets, this
@@ -48,6 +53,7 @@
     For Svelte apps you would initialise this flag in the onMount callback.
 -->
 {#if initialised}
+
     <h1>Testing Svelte slots</h1>
     <p>This svelte app is wrapped in a web-component, which passes props <b>abc</b> and <b>hello</b> to the app, as well as some slot content.</p>
 
@@ -76,6 +82,11 @@
     See index.html for an example.
 -->
 
+    <h4>sveltestrap</h4>
+    <Button color="danger" on:click={()=>{}}>Click Me</Button>
+    <Alert>Alertingly ...</Alert>
+
+    <hr>
     <h4>Nested Input component with a slot of it's own:</h4>
     <p><i>The "slotted" label, below, does not render at all without PR #3136</i></p>
     <Input

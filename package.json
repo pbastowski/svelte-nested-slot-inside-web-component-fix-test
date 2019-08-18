@@ -10,7 +10,9 @@
         "test-static": "cd dist && serve"
     },
     "dependencies": {
-        "svelte": "github:cam-stitt/svelte#3128-custom-el-nested-slots"
+        "svelte": "github:cam-stitt/svelte#3128-custom-el-nested-slots",
+        "sveltestrap": "^3.0.4",
+        "bootstrap": "^4.3.1"
     },
     "devDependencies": {
         "mini-css-extract-plugin": "^0.8.0",
