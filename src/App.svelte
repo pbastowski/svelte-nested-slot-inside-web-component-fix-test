@@ -61,12 +61,10 @@
 <hr />
 <h4>Props passed in from index.html:</h4>
 <pre>
-    <b>abc:</b>
-    {abc}
-</pre>
-<pre>
-    <b>hello</b>
-    : {hello}
+    { JSON.stringify({
+        abc,
+        hello
+    }, null, 4) }
 </pre>
 
 <hr />

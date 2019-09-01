@@ -7,27 +7,15 @@
         <title>poi-svelte</title>
     </head>
     <body>
-        <% if (!envs.POI_APP_CUSTOM_ELEMENT) { %>
-        <!--
-            This section is only generated for Svelte web apps.
-        -->
-        <lit-01 abc="123" hello="world 12"></lit-01>
-
-        <% } else { %>
-
-        <!--
-            This section is only generated for Web components.
-        -->
-
-        <my-thing abc="1234" hello="world" onclick="clickHandler()"
-            >This slot content is coming from Index.html, as expected.</my-thing
+        <lit-01 abc="123" hello="world 12" onclick="clickHandler()"
+            >HTML from index</lit-01
         >
 
         <script>
             window.addEventListener('load', () => {
-                const el = document.querySelector('my-thing')
+                const el = document.querySelector('lit-01')
                 el.addEventListener('custom', customHandler)
-                el.$on('svelte-event', () => console.log('### Svelte EVENT'))
+                // el.$on('svelte-event', () => console.log('### Svelte EVENT'))
             })
 
             function clickHandler() {
@@ -37,6 +25,5 @@
                 console.log('### CUSTOM')
             }
         </script>
-        <% } %>
     </body>
 </html>
