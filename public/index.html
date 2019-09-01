@@ -11,7 +11,7 @@
         <!--
             This section is only generated for Svelte web apps.
         -->
-        <div id="app"></div>
+        <lit-01 abc="123" hello="world 12"></lit-01>
 
         <% } else { %>
 
@@ -19,11 +19,9 @@
             This section is only generated for Web components.
         -->
 
-        <my-thing
-            abc="1234"
-            hello="world"
-            onclick="clickHandler()"
-        >This slot content is coming from Index.html, as expected.</my-thing>
+        <my-thing abc="1234" hello="world" onclick="clickHandler()"
+            >This slot content is coming from Index.html, as expected.</my-thing
+        >
 
         <script>
             window.addEventListener('load', () => {

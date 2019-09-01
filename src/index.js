@@ -1,7 +1,24 @@
+import { LitElement, html, css } from 'lit-element'
+
 import App from './App.svelte'
 
-const app = new App({
-    target: document.body
-})
+customElements.define(
+    'lit-01',
+    class extends LitElement {
+        static get properties() {
+            return {
+                abc: String,
+                hello: Boolean
+            }
+        }
 
-export default app
+        connectedCallback() {
+            const app = new App({
+                target: this.shadowRoot,
+                props: { abc: this.abc, hello: this.hello }
+            })
+        }
+    }
+)
+
+// export default app
